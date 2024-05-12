@@ -2,15 +2,40 @@ document.addEventListener('DOMContentLoaded', function() {
     const addButton = document.querySelector('.add__btn-click');
     const todoLists = document.querySelector('.todo__lists');
     const inputValue = document.querySelector('.create__todo-input');
+    let df = "radio-1";
+
+    const myRadio = document.getElementById('radio-1');
+    myRadio.addEventListener('click', function() {
+        df = "radio-1"; 
+        if (this.checked) {
+            this.style.appearance = 'auto'; 
+            this.style.boxShadow = 'none'; 
+        } else {
+            this.style.appearance = 'none'; 
+            this.style.boxShadow = '2px 2px 4px rgba(0, 0, 0, 0.4)'; 
+        }
+    });
+
+    const myRadioSecond = document.getElementById('radio-2');
+    myRadioSecond.addEventListener('click', function() {
+        df = "radio-2";
+        if (this.checked) {
+            this.style.appearance = 'auto'; 
+            this.style.boxShadow = 'none'; 
+        } else {
+            this.style.appearance = 'none'; 
+            this.style.boxShadow = '2px 2px 4px rgba(0, 0, 0, 0.4)'; 
+        } 
+    });
 
     addButton.addEventListener('click', function() {
         const newTodoItem = document.createElement('div');
         newTodoItem.classList.add('form_radio_lists');
         newTodoItem.innerHTML = `
             <div class="labels">
-                <input id="radio" type="radio" name="radio" onMouseDown="this.isChecked=this.checked;" 
+                <input id="${df}" type="radio" name="radio" onMouseDown="this.isChecked=this.checked;" 
                 onClick="this.checked=!this.isChecked;">
-                <label class="labels_line" for="radio">${inputValue.value}</label>
+                <label class="labels_line" for="${df}">${inputValue.value}</label>
             </div>
             <div class="form-radio-btn">
                 <button class="edit-btn">Edit</button>
@@ -44,13 +69,13 @@ document.addEventListener('DOMContentLoaded', function() {
         radio.addEventListener('click', function() {
             if (this.checked) {
                 label.style.color = 'grey'; 
-                label.style.textDecoration = 'line-through'; 
+                label.style.textDecoration = 'line-through';
+                this.style.appearance = 'auto'; 
+                this.style.boxShadow = 'none';  
             } else {
                 label.style.color = ''; 
                 label.style.textDecoration = ''; 
             }
         });
-
-      
     });
 });

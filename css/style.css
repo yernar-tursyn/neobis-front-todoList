@@ -93,6 +93,10 @@ body {
     height: 20px;
 }
 
+#radio-1::before {
+  
+}
+
 #radio-2 {
     appearance: none;
     border: 2px solid rgb(255, 0, 217);
