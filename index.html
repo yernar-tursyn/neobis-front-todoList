@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>To do List</title>
+</head>
+<body>
+    <div class="container">
+        <div class="title__name">
+            <p class="paragpraph-text">What's up, <input class="title__name-input" type="text"></p>
+        </div>
+        <div class="create__todo">
+            <p class="create__todo-text">CREATE A TODO</p>
+            <p class="create__todo-question">What's on your todo list?</p>
+            <input class="create__todo-input" type="text" placeholder="e.g. get a milk">
+        </div>
+        <div class="pick_category">
+            <p class="create__todo-question">Pick a category</p>
+            <div class="typesOf_category">
+                <div class="bussiness-type">
+                    <div class="form_radio">
+                        <input id="radio-1" type="radio" name="radio" onMouseDown="this.isChecked=this.checked;" 
+                        onClick="this.checked=!this.isChecked;">
+                        <label for="radio-1">Business</label>
+                    </div>
+                    <div class="form_radio">
+                        <input id="radio-2" type="radio" name="radio" onMouseDown="this.isChecked=this.checked;" 
+                        onClick="this.checked=!this.isChecked;">
+                        <label for="radio-2">Personal</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="add__btn">
+            <button class="add__btn-click">Add todo</button>
+        </div>
+        <p class="create__todo-text">TODO LIST</p>
+         <div class="todo__lists">
+            <!-- <div class="form_radio_lists">
+                <div class="labels">
+                    <input id="radio-1" type="radio" name="radio" value="1">
+                    <label for="radio-1">Complete Task 1</label>
+                </div>
+                <div class="form-radio-btn">
+                    <button class="edit-btn">Edit</button>
+                    <button class="delete-btn">Delete</button>
+                </div>
+            </div> -->
+        </div> 
+    </div>  
+    <script src="./js/index.js"></script>
+</body>
+</html>
