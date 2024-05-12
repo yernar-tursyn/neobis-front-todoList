@@ -51,16 +51,23 @@ document.addEventListener('DOMContentLoaded', function() {
         const label = newTodoItem.querySelector('.labels_line');
 
         editButton.addEventListener('click', function() {
-            const parent = this.closest('.form_radio_lists');            
-            const label = parent.querySelector('.labels_line');
-
+            const labelText = label.textContent;
+        
             const input = document.createElement('input');
             input.setAttribute('type', 'text');
             input.classList.add('input_modify');
-            input.value = label.textContent;
-
-            label.parentNode.replaceChild(input, label);
+            input.value = labelText;
+        
+            label.textContent = '';
+            label.appendChild(input);
+        
+            input.focus();
+        
+            input.addEventListener('blur', function() {
+                label.textContent = input.value;
+            });
         });
+        
 
         deleteButton.addEventListener('click', function() {
             newTodoItem.remove();
